@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+body {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 2.5px;
+}
+.nav-link:link, .nav-link:visited, .nav-link:hover, .nav-link:active {
+    color: black;
+}
+.footer hr {
+    width: 90%;
+    background-color: black;
+}
