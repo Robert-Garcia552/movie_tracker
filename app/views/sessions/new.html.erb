@@ -1,0 +1,14 @@
+<div class="container-fluid p-4">
+  <div class="col-sm-12 col-md-6 col-lg-6">
+    <%=form_tag "/login" do |f| %>
+      <div class="grid-container">
+        <%= label :session, "email" %>
+        <%= text_field_tag :email, value = nil, class: 'form-inputs' %>
+        <%= label :session, "password" %>
+        <%= text_field_tag :password, value = nil, class: 'form-inputs' %>
+      </div>
+      
+      <%= submit_tag 'Login', class: "btn btn-primary" %>
+    <%end%>
+  </div>
+</div>

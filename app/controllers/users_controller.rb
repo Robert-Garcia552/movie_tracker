@@ -6,7 +6,8 @@ class UsersController < ApplicationController
   def create 
     user = User.new(user_params)
     if user.save
-      flash[:success] = "Welcome to Movie Tracker #{user.first_name}!"
+      session[:user_id] = user.id
+      flash[:success] = "Welcome to Movie Tracker #{current_user.first_name}!"
       redirect_to root_path
     else 
       flash[:danger] = "Something went wrong please try again."

@@ -3,4 +3,8 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :users, only: [ :new, :create, :edit ]
+  # resource :sessions, only: [ :new, :create, :destroy ]
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
 end
