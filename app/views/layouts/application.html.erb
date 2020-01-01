@@ -12,6 +12,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   </head>
   <body>
+    <div class='container-fluid p-0' id="alert">
+      <% flash.each do |name, msg| %>
+        <div class='alert alert-<%= name %> text-center fade show' role="alert">
+          <%= msg %>
+        </div>
+      <% end %>
+    </div>
     <div class="container-fluid p-2">
       <div class="row">
         <div class="col-sm-12 col-md-6 col-lg-6">

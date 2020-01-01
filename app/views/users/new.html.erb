@@ -1,0 +1,26 @@
+<div class="container-fluid p-4">
+  <div class="row text-center">
+    <div class="col-sm-12 col-md-6 col-lg-6 m-auto text-center">
+        <h1>Thanks for registering!</h1>
+        <h2>Simply fill in the form and start tracking your movies today!</h2>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-6">
+      <%=form_for :user, url: '/users' do |f| %>
+        <div class="grid-container">
+          <%= f.label :first_name %> 
+          <%= f.text_field :first_name, class: 'form-inputs' %>
+          <%= f.label :last_name %>
+          <%= f.text_field :last_name, class: 'form-inputs' %>
+          <%= f.label :email %>
+          <%= f.text_field :email, class: 'form-inputs' %>
+          <%= f.label :password %> 
+          <%= f.text_field :password, class: 'form-inputs' %>
+          <%= f.label :password_confirmation %>
+          <%= f.text_field :password_confirmation, class: 'form-inputs' %>
+        </div>
+        
+        <%= f.submit 'Sign Up', class: "btn btn-primary" %>
+      <%end%>
+    </div>
+  </div>
+</div>
