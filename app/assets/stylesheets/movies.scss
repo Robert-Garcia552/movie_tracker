@@ -1,0 +1,21 @@
+.card-container {
+    padding: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card {
+    width: 18em;
+    margin: 16px;
+    text-align: center;
+}
+.card-body .text-container {
+    height: 250px;
+    margin-bottom: 16px;
+}
+.card-text {
+    height: 200px;
+    letter-spacing: .5px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
