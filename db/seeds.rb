@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+response = HTTParty.get(
+            'https://api.themoviedb.org/3/movie/upcoming?api_key=91684791b09b4bdc969773e0a956e1c0&language=en-US',
+        )
+
+movies = response["results"]
+
+movies.each do |m|
+    Movie.create([ m ])
+end

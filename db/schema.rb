@@ -10,7 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_31_044437) do
+ActiveRecord::Schema.define(version: 2020_01_04_021029) do
+
+  create_table "movies", force: :cascade do |t|
+    t.integer "popularity"
+    t.integer "vote_count"
+    t.boolean "video"
+    t.string "poster_path"
+    t.boolean "adult"
+    t.string "backdrop_path"
+    t.string "original_language"
+    t.string "original_title"
+    t.integer "genre_ids"
+    t.string "title"
+    t.integer "vote_average"
+    t.string "overview"
+    t.string "release_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "first_name"
