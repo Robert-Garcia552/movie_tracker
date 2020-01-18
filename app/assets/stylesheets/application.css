@@ -16,6 +16,7 @@
 body {
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 2.5px;
+    padding: 20px;
 }
 .nav-link:link, .nav-link:visited, .nav-link:hover, .nav-link:active {
     color: black;
