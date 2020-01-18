@@ -1,24 +1,15 @@
-# README
+# Movie Tracker
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+App that allows users to track movies they have seen.
 
-Things you may want to cover:
+### Author
 
-* Ruby version
+Robert Garcia
 
-* System dependencies
+### Dependencies
 
-* Configuration
+* Ruby 2.6.3
 
-* Database creation
+### Test Suite
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Coming Soon
