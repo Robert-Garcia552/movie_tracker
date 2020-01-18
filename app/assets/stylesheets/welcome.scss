@@ -1,10 +1,11 @@
 @import "src/media_queries";
 
-.hero-container {
+.flex-container {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
+    padding: 16px;
 }
 .hero-image {
     width: 100%;
@@ -27,4 +28,23 @@
 .sub-text {
     width: 60%;
     margin: auto;
+}
+.steps {
+    text-align: center;
+    padding: 20px;
+    font-size: 1em;
+    width: 300px;
+}
+.step {
+    padding: 30px;
+    width: 150px;
+    border-radius: 65%;
+    background-color: black;
+    color: white;
+    margin: auto;
+    margin-bottom: 20px;
+}
+.get-started-banner {
+    text-align: center;
+    padding: 16px;
 }
