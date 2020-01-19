@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       flash[:success] = "Welcome back #{current_user.first_name}"
-      redirect_to "/"
+      redirect_to "/movies"
     else
       flash[:danger] = "Email and password combination not found."
       redirect_to "/login"
