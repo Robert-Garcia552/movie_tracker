@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  */
+@import "src/media_queries";
+
 body {
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 2.5px;
