@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 response = HTTParty.get(
-            'https://api.themoviedb.org/3/movie/upcoming?api_key=91684791b09b4bdc969773e0a956e1c0&language=en-US',
+            "https://api.themoviedb.org/3/movie/upcoming?api_key=#{MOVIES_KEY}&language=en-US",
         )
 
 movies = response["results"]

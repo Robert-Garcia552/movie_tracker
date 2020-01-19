@@ -3,9 +3,15 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :users, only: [ :new, :create, :edit ]
-  # resource :sessions, only: [ :new, :create, :destroy ]
+  
+  # sessions
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
+  
+  # show all movies
   get '/movies' => 'movies#index'
+
+  # add favorite
+  post '/favorite/add' => 'favorites#create'
 end
