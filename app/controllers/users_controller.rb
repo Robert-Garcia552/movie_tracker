@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       flash[:success] = "Welcome to Movie Tracker #{current_user.first_name}!"
       redirect_to root_path
     else 
-      flash[:danger] = "Something went wrong please try again."
+      flash[:danger] = user.errors.full_messages.join(", ") if user.errors.any?
       redirect_to new_user_path
     end
   end
