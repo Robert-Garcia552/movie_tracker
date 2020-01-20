@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     if user.save
       session[:user_id] = user.id
       flash[:success] = "Welcome to Movie Tracker #{current_user.first_name}!"
-      redirect_to root_path
+      redirect_to movies_path
     else 
       flash[:danger] = user.errors.full_messages.join(", ") if user.errors.any?
       redirect_to new_user_path
