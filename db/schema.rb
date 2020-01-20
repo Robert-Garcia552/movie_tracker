@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2020_01_19_152330) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "favorites", force: :cascade do |t|
     t.integer "user_id"
     t.integer "movie_id"
@@ -28,7 +31,7 @@ ActiveRecord::Schema.define(version: 2020_01_19_152330) do
     t.string "backdrop_path"
     t.string "original_language"
     t.string "original_title"
-    t.integer "genre_ids"
+    t.integer "genre_ids", default: [], array: true
     t.string "title"
     t.integer "vote_average"
     t.string "overview"
