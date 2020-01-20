@@ -27,7 +27,6 @@
       </div>
       <div class="navbar col-sm-12 col-md-6 col-lg-6">
         <a class="nav-link" href="/">Home</a>
-        <a class="nav-link" href="/">Profile</a>
         <a class="nav-link" href="/">About Us</a>
         <% if !current_user %>
           <%= link_to "Login", "/login", class: "nav-link" %>
@@ -36,7 +35,9 @@
         <% end %>
       </div>
     </div>
+
     <%= yield %>
+
     <div id="footer">
       <hr>
       <div class="row text-center m-auto">
