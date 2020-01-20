@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   # show all movies
   get '/movies' => 'movies#index'
 
-  # add favorite
-  post '/favorite/add' => 'favorites#create'
+  # favorites
+  post '/favorites/add' => 'favorites#create'
+  get '/favorites/delete' => 'favorites#destroy'
 end
