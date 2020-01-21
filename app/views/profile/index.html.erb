@@ -1,0 +1,9 @@
+<div class="reg-container">
+  <div class="profile-mini-container">
+    <%= image_tag("/assets/paramount.jpg", class: "profile-image") %>
+    <h1 class="profile-header">Welcome <%= current_user.first_name %>,</h1>
+  </div>
+  <% @favorite_movies.each do | m | %>
+    <%= render partial: '/shared/movie_card', locals: { m: m, favorite: true } %>
+  <% end %>
+</div>

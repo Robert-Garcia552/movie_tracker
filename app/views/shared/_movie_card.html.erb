@@ -1,0 +1,11 @@
+ <div class="card">
+  <img src="https://image.tmdb.org/t/p/w500/<%= m.poster_path %>" class="card-img-top" alt="<%= m.title %>">
+  <div class="card-body">
+    <div class="text-container">
+        <h5 class="card-title"><%= m.title %></h5>
+        <p class="card-text"><%= m.overview %></p>
+    </div>
+    <i class="<%= favorite ? 'fas' : 'far' %> fa-thumbs-up fa-3x" data-user-id="<%= current_user.id %>" data-movie-id="<%= m.id %>"></i> 
+    <% # @favorite_movies_ids.include?(movie.id) %>
+  </div>
+</div>

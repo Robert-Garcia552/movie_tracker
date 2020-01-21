@@ -15,4 +15,7 @@ Rails.application.routes.draw do
   # favorites
   post '/favorites/add' => 'favorites#create'
   get '/favorites/delete' => 'favorites#destroy'
+
+  # profile
+  get '/profile' => 'profile#index'
 end

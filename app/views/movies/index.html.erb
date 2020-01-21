@@ -1,14 +1,5 @@
 <div class="card-container">
   <% @movies.each do |movie|%>
-  <div class="card">
-      <img src="https://image.tmdb.org/t/p/w500/<%= movie.poster_path %>" class="card-img-top" alt="<%= movie.title %>">
-      <div class="card-body">
-        <div class="text-container">
-            <h5 class="card-title"><%= movie.title %></h5>
-            <p class="card-text"><%= movie.overview %></p>
-        </div>
-          <i class="<%= @favorite_movies_ids.include?(movie.id) ? 'fas' : 'far' %> fa-thumbs-up fa-3x" data-user-id="<%= current_user.id %>" data-movie-id="<%= movie.id %>"></i> 
-      </div>
-    </div>
+  <%= render partial: "/shared/movie_card", locals: { m: movie, favorite: @favorite_movies_ids.include?(movie.id) }%>
   <% end %>
 </div>
