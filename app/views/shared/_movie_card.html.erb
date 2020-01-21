@@ -5,7 +5,6 @@
         <h5 class="card-title"><%= m.title %></h5>
         <p class="card-text"><%= m.overview %></p>
     </div>
-    <i class="<%= favorite ? 'fas' : 'far' %> fa-thumbs-up fa-3x" data-user-id="<%= current_user.id %>" data-movie-id="<%= m.id %>"></i> 
-    <% # @favorite_movies_ids.include?(movie.id) %>
+    <i class="<%= favorite ? 'fas' : 'far' %> fa-sticky-note fa-3x" data-user-id="<%= current_user.id %>" data-movie-id="<%= m.id %>"></i> 
   </div>
 </div>

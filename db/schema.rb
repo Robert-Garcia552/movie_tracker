@@ -15,13 +15,6 @@ ActiveRecord::Schema.define(version: 2020_01_19_152330) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "favorites", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "movie_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "movies", force: :cascade do |t|
     t.integer "popularity"
     t.integer "vote_count"
@@ -45,6 +38,14 @@ ActiveRecord::Schema.define(version: 2020_01_19_152330) do
     t.string "last_name"
     t.string "email"
     t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "watched_movies", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "movie_id"
+    t.boolean "favorite", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -13,8 +13,8 @@ Rails.application.routes.draw do
   get '/movies' => 'movies#index'
 
   # favorites
-  post '/favorites/add' => 'favorites#create'
-  get '/favorites/delete' => 'favorites#destroy'
+  post '/watched_movies/add' => 'watched_movies#create'
+  get '/watched_movies/delete' => 'watched_movies#destroy'
 
   # profile
   get '/profile' => 'profile#index'

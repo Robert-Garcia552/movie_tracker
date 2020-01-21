@@ -1,6 +1,6 @@
 # Movie Tracker
 
-App that allows users to track movies they have seen.
+App that allows users to track movies they have seen, favorite the ones they enjoyed, and write reviews.
 
 ### Author
 

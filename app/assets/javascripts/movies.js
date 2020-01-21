@@ -5,18 +5,18 @@ $(document).ready(function() {
 
     $.ajax({
       method: "POST",
-      url: "/favorites/add",
+      url: "/watched_movies/add",
       beforeSend: function(xhr) {
         xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))
       },
       data: {
-        favorite: {
+        watched_movie: {
           user_id: userId,
           movie_id: movieId
         }
       },
       success: function(data) {
-        $(`[data-movie-id='${movieId}']`).removeClass('far fa-thumbs-up fa-3x').addClass('fas fa-thumbs-up fa-3x')
+        $(`[data-movie-id='${movieId}']`).removeClass('far fa-sticky-note fa-3x').addClass('fas fa-sticky-note fa-3x')
       }
     });
   });
@@ -26,7 +26,7 @@ $(document).ready(function() {
 
     $.ajax({
       method: "GET",
-      url: "/favorites/delete",
+      url: "/watched_movies/delete",
       beforeSend: function(xhr) {
         xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))
       },
@@ -34,7 +34,7 @@ $(document).ready(function() {
         movie_id: $(this).data().movieId
       },
       success: function(data) {
-        $(`[data-movie-id='${movieId}']`).removeClass('fas fa-thumbs-up fa-3x').addClass('far fa-thumbs-up fa-3x')
+        $(`[data-movie-id='${movieId}']`).removeClass('fas fa-sticky-note fa-3x').addClass('far fa-sticky-note fa-3x')
       }
     });
   });
