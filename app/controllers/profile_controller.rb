@@ -6,8 +6,8 @@ class ProfileController < ApplicationController
     @watched_movies ||= watched_movies.map do | m |
       Movie.find(m.movie_id)
     end
-    # @favorite_movies ||= watched_movies.map do | f |
-    #   Movie.find(f.movie_id) if f.favorite 
-    # end
+    @favorite_movies ||= watched_movies.map do | f |
+      Movie.find(f.movie_id) if f.favorite 
+    end
   end
 end

@@ -12,9 +12,11 @@ Rails.application.routes.draw do
   # show all movies
   get '/movies' => 'movies#index'
 
-  # favorites
+  # watched_movies
   post '/watched_movies/add' => 'watched_movies#create'
   get '/watched_movies/delete' => 'watched_movies#destroy'
+  put '/watched_movies/update_favorite' => 'watched_movies#update_favorite'
+  
 
   # profile
   get '/profile' => 'profile#index'

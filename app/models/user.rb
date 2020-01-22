@@ -1,5 +1,8 @@
 class User < ApplicationRecord
   has_secure_password
+
+  has_many :watched_movies, dependent: :destroy
+  
   before_save   :downcase_email, :capitalize_name
 
   validates :first_name, :last_name, :email, :presence => true, on: :create

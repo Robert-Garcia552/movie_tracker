@@ -1,6 +1,7 @@
 class MoviesController < ApplicationController
     def index
         @movies = Movie.all
-        @favorite_movies_ids = WatchedMovie.where(user_id: current_user.id, favorite: true).map{ |m| m.movie_id }
+        @watched_movies_ids ||= current_user.watched_movies&.map{ |m| m.movie_id }
+        @favorite_movies_ids ||= current_user.watched_movies&.map{ |m| m.movie_id if m.favorite }
     end
 end
