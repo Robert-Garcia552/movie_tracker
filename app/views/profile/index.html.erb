@@ -1,16 +1,13 @@
 <div class="reg-container">
   <div class="profile-mini-container">
     <%= image_tag("/assets/paramount.jpg", class: "profile-image") %>
-    <h1 class="profile-header">Welcome <%= current_user.first_name %>,</h1>
+    <h1 class="profile-header">Welcome <%= current_user.first_name %> you've seen <%= current_user.watched_movies&.count || '0' %> movies!</h1>
   </div>
   <h2>Watched Movies</h2>
   <hr>
-  <% @watched_movies.each do | m | %>
-    <%= render partial: '/shared/movie_card', locals: { m: m, favorite: false } %>
-  <% end %>
-  <h2>Favorite Movies</h2>
-  <hr>
-  <%# @favorite_movies.each do | m | %>
-    <%# render partial: '/shared/movie_card', locals: { m: m, favorite: true } %>
-  <%# end %>
+  <div class="flex-container">
+    <% @watched_movies.each do | m | %>
+      <%= render partial: '/shared/movie_card', locals: { m: m, watched_movie: true, favorite: false } %>
+    <% end %>
+  </div>
 </div>
