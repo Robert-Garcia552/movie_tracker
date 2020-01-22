@@ -3,11 +3,22 @@
     <%= image_tag("/assets/paramount.jpg", class: "profile-image") %>
     <h1 class="profile-header">Welcome <%= current_user.first_name %> you've seen <%= current_user.watched_movies&.count || '0' %> movies!</h1>
   </div>
-  <h2>Watched Movies</h2>
-  <hr>
-  <div class="flex-container">
-    <% @watched_movies.each do | m | %>
-      <%= render partial: '/shared/movie_card', locals: { m: m, watched_movie: true, favorite: false } %>
+  <% if @watched_movies.present? %>
+    <h2>Watched Movies</h2>
+    <hr>
+    <div class="flex-container">
+      <% @watched_movies.each do | m | %>
+        <%= render partial: '/shared/movie_card', locals: { m: m, watched_movie: true, favorite: false } %>
+      <% end %>
+    </div>
+    <% if @favorite_movies.present? %>
+      <h2>Favorite Movies</h2>
+      <hr>
+      <div class="flex-container">
+        <% @favorite_movies.each do | m | %>
+          <%= render partial: '/shared/movie_card', locals: { m: m, watched_movie: true, favorite: true } %>
+        <% end %>
+      </div>
     <% end %>
-  </div>
+  <% end %>
 </div>
