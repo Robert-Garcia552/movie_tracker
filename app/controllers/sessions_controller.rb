@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       redirect_to profile_path
     else
       flash[:danger] = "Email and password combination not found."
-      redirect_to new_sessions_path
+      redirect_to login_path
     end
   end
 
