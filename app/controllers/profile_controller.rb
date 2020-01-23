@@ -2,9 +2,11 @@ class ProfileController < ApplicationController
   before_action :authorize
 
   def index
-    @favorite_movies ||= WatchedMovie.where(user_id: current_user.id, favorite: true)&.map do |m|
+    @watched_movies ||= WatchedMovie.where(user_id: current_user.id)&.map do |m|
       Movie.find(m.movie_id)
     end
-    @watched_movies ||= Movie.joins("INNER JOIN watched_movies ON watched_movies.movie_id = movies.id")
+    @favorite_movies ||= @watched_movies&.map do |m|
+      Movie.find(m.movie_id) if m.favorite
+    end
   end
 end

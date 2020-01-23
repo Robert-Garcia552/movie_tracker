@@ -20,5 +20,9 @@
         <% end %>
       </div>
     <% end %>
+  <% else %>
+    <div class="reg-container text-center">
+      <%= link_to "Find Some Movies", movies_path, class: "btn btn-primary" %>
+    </div>
   <% end %>
 </div>
