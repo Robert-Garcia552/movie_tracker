@@ -14,28 +14,34 @@
     <script src="https://kit.fontawesome.com/c1476fdb97.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <div class='container-fluid p-0' id="alert">
       <% flash.each do |name, msg| %>
-        <div class='alert alert-<%= name %> text-center fade show' role="alert">
-          <%= msg %>
+        <div class='container-fluid p-0' id="alert">
+          <div class='alert alert-<%= name %> text-center fade show' role="alert">
+            <%= msg %>
+          </div>
         </div>
       <% end %>
-    </div>
-    <div class="flex-container">
-      <div class="col-sm-12 col-md-6 col-lg-6">
-        <h1>Movie Tracker</h1>
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <%= link_to "Movie Tracker", root_path, class: "navbar-brand", id: "header" %>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+          <li class="nav-item">
+            <%= link_to "Home", current_user ? profile_path : root_path, class: "nav-link" %>
+          </li>
+          <% if !current_user %>
+            <li class="nav-item">
+              <%= link_to "Login", "/login", class: "nav-link" %>
+            </li>
+          <% else %>
+            <%= link_to "Movies", movies_path, class: "nav-link" %>
+            <%= link_to "Logout", logout_path, class: "nav-link" %>
+          <% end %>
+        </ul>
       </div>
-      <div class="navbar col-sm-12 col-md-6 col-lg-6">
-        <%= link_to "Home", current_user ? profile_path : root_path, class: "nav-link" %>
-        <a class="nav-link" href="/">About Us</a>
-        <% if !current_user %>
-          <%= link_to "Login", "/login", class: "nav-link" %>
-        <% else %>
-          <%= link_to "Movies", movies_path, class: "nav-link" %>
-          <%= link_to "Logout", logout_path, class: "nav-link" %>
-        <% end %>
-      </div>
-    </div>
+    </nav>
 
     <%= yield %>
 
