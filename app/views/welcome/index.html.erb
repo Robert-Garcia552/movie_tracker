@@ -2,12 +2,11 @@
   <%= image_tag("/assets/paramount.jpg", class: "hero-image") %>
   <div class="hero-text">
     <h1>Welcome to Movie Tracker</h1>
-    <p class="sub-text">A place for movie lovers to track and rate movies they have seen! Best of all it's free to use.</p>
+    <p class="sub-text">A place for movie lovers to track and review movies they have seen! Best of all it's free to use.</p>
     <%= link_to  "Create Account", new_user_path, class: "btn btn-primary mt-4" %>
   </div>
 </div>
-
-<div class="flex-container">
+<div class="flex-container" id="main-background">
   <div class="steps">
     <h2 class="step">Step 1</h2>
     <p>Create an account, all you need is an email address.</p>
@@ -21,8 +20,12 @@
     <p>You'll never forget if you saw that bad movie.</p>
   </div>
 </div>
-
+<div class="flex-container">
+  <% @movie_samples.each do |sample| %>
+    <%= render partial: '/shared/movie_card', locals: { m: sample, watched_movie: false, favorite: false, icons: false } %>
+  <% end %>
+</div>
 <div class="get-started-banner">
   <h2>What are you waiting for?</h2>
-  <%= link_to  "Get Started Today", new_user_path, class: "btn btn-primary mt-4" %>
+  <%= link_to  "Start Tracking Today", new_user_path, class: "btn btn-primary mt-4" %>
 </div>
