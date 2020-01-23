@@ -1,13 +1,11 @@
 class SessionsController < ApplicationController
-  def new
-  end
 
   def create
     user = User.find_by_email(params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       flash[:success] = "Welcome back #{current_user.first_name}"
-      redirect_to movies_path
+      redirect_to profile_path
     else
       flash[:danger] = "Email and password combination not found."
       redirect_to new_sessions_path
