@@ -1,3 +1,3 @@
 $(document).ready(function() {
-  setTimeout(function() { $('#alert').hide(); }, 5000);
+  setTimeout(function() { $('#alert').fadeOut(1000); }, 5000);
 });
