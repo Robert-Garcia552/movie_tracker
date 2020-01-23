@@ -1,5 +1,5 @@
 <div class="card-container">
   <% @movies.each do |movie|%>
-    <%= render partial: "/shared/movie_card", locals: { m: movie, watched_movie: @watched_movies_ids.include?(movie.id),favorite: @favorite_movies_ids.include?(movie.id) }%>
+    <%= render partial: "/shared/movie_card", locals: { m: movie, watched_movie: @watched_movies_ids.include?(movie.id),favorite: @favorite_movies_ids.include?(movie.id), icons: true }%>
   <% end %>
 </div>
