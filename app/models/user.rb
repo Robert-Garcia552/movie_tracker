@@ -3,7 +3,7 @@ class User < ApplicationRecord
 
   has_many :watched_movies, dependent: :destroy
   
-  before_save   :downcase_email, :capitalize_name
+  before_save :downcase_email, :capitalize_name
 
   validates :first_name, :last_name, :email, :presence => true, on: :create
   validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }

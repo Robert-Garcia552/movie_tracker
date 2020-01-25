@@ -7,7 +7,7 @@
   <hr>
   <div class="flex-container">
     <% @watched_movies.each do | m | %>
-      <%= render partial: '/shared/movie_card', locals: { m: m, watched_movie: true, favorite: false, icons: true } %>
+      <%= render partial: '/shared/movie_card', locals: { m: m.movie, watched_movie: true, favorite: false, icons: true } %>
     <% end %>
   </div>
   <% if @favorite_movies.present? %>
@@ -15,7 +15,7 @@
     <hr>
     <div class="flex-container">
       <% @favorite_movies.each do | m | %>
-        <%= render partial: '/shared/movie_card', locals: { m: m, watched_movie: true, favorite: true, icons: true } %>
+        <%= render partial: '/shared/movie_card', locals: { m: m.movie, watched_movie: true, favorite: true, icons: true } %>
       <% end %>
     </div>
   <% end %>
