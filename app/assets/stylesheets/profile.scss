@@ -7,23 +7,25 @@
     margin-bottom: 16px;
 
     @include medium {
-        display: block;
         margin-bottom: 0;
     }
 }
 .profile-mini-container {
     text-align: center;
     padding: 16px;
-
-    @include medium {
-        width: 70%;
-        display: flex;
-        justify-content: space-evenly;
-    }
-}
-.profile-header {
-    margin: auto;
 }
 .profile-header-container {
     padding: 16px;
+}
+.profile-header {
+    display: inline-block;
+    text-align: center;
+    padding: 20px;
+}
+.profile-stats {
+    display: flex;
+    justify-content: space-evenly;
+}
+.stat {
+    padding: 0 16px;
 }
