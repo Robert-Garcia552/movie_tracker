@@ -20,4 +20,5 @@ Rails.application.routes.draw do
 
   # profile
   get '/profile' => 'profile#index'
+  get '/about-us' => 'about#index'
 end
