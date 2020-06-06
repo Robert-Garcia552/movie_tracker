@@ -27,13 +27,19 @@
       </button>
       <%= link_to "Movie Tracker", root_path, class: "navbar-brand", id: "header" %>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+        <ul class="navbar-nav mt-2 mt-lg-0">
           <li class="nav-item">
             <%= link_to "Home", current_user ? profile_path : root_path, class: "nav-link" %>
           </li>
+          <li class="nav-item">
+            <%= link_to "About Us", about_us_path, class: "nav-link" %>
+          </li>
           <% if !current_user %>
             <li class="nav-item">
-              <%= link_to "Login", "/login", class: "nav-link" %>
+              <%= link_to "Login", login_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Sign Up", new_user_path, class: "nav-link" %>
             </li>
           <% else %>
             <%= link_to "Movies", movies_path, class: "nav-link" %>
@@ -45,20 +51,11 @@
 
     <%= yield %>
 
-    <div id="footer">
-      <hr>
-      <div class="row text-center m-auto">
-        <div class="col-sm-12 col-md-4 col-lg-4">
-          <a class="nav-link" href="/">Home</a>
-        </div>
-        <div class="col-sm-12 col-md-4 col-lg-4">
-          <a class="nav-link" href="/">Profile</a>
-        </div>
-        <div class="col-sm-12 col-md-4 col-lg-4">
-          <a class="nav-link" href="/">About Us</a>
-        </div>
-      </div>
-    </div>
+    <hr>
+    <footer class="flex-container">
+      <%= link_to "Home", current_user ? profile_path : root_path, class: "nav-link" %>
+      <%= link_to "About Us", about_us_path, class: "nav-link" %>
+    </footer>
 
     <!-- Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>    
