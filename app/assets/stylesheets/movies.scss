@@ -1,26 +1,35 @@
 .card-container {
-    padding: 16px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  padding: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
+
 .card {
-    width: 18em;
-    margin: 16px;
-    text-align: center;
+  width: 18em;
+  margin: 16px;
+  text-align: center;
 }
+
 .card-body .text-container {
-    height: 250px;
-    margin-bottom: 16px;
+  height: 250px;
+  margin-bottom: 16px;
 }
+
 .card-text {
-    height: 220px;
-    letter-spacing: .5px;
-    overflow: hidden;
+  height: 220px;
+  letter-spacing: .5px;
+  overflow: hidden;
 }
+
 .far, .fas {
-    margin-top: 16px;
+  margin-top: 16px;
 }
+
 .fa-circle {
-    color: grey;
+  color: grey;
+}
+
+.hidden {
+  display: none !important;
 }

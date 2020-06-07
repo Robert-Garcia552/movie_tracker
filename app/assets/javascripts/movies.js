@@ -1,7 +1,7 @@
 $(document).ready(function() {
-  $('.card-body').on('click', '.far.fa-bookmark', function() {
-    let userId = $(this).data().userId;
-    let movieId = $(this).data().movieId;
+  $('.card').on('click', '.far.fa-bookmark', function() {
+    let userId = $(this).closest('.card').data().userId;
+    let movieId = $(this).closest('.card').data().movieId;
 
     $.ajax({
       method: "POST",
@@ -16,16 +16,18 @@ $(document).ready(function() {
         }
       },
       success: function(data) {
-        $(`[data-movie-id='${movieId}']`)
+        $(`.card[data-movie-id='${movieId}']`)
+          .find(`.fa-bookmark`)
           .removeClass('far fa-bookmark fa-stack-1x fa-inverse')
           .addClass('fas fa-bookmark fa-stack-1x fa-inverse')
+        $(`.card[data-movie-id='${movieId}'] .favorite`).removeClass('hidden')
       }
     });
   });
 
-  $('.card-body').on('click', '.fas.fa-bookmark', function() {
-    let userId = $(this).data().userId;
-    let movieId = $(this).data().movieId;
+  $('.card').on('click', '.fas.fa-bookmark', function() {
+    let userId = $(this).closest('.card').data().userId;
+    let movieId = $(this).closest('.card').data().movieId;
 
     $.ajax({
       method: "GET",
@@ -40,16 +42,18 @@ $(document).ready(function() {
         }
       },
       success: function(data) {
-        $(`[data-movie-id='${movieId}']`)
+        $(`.card[data-movie-id='${movieId}']`)
+          .find(`.fa-bookmark`)
           .removeClass('fas fa-bookmark fa-stack-1x fa-inverse')
           .addClass('far fa-bookmark fa-stack-1x fa-inverse')
+        $(`.card[data-movie-id='${movieId}'] .favorite`).addClass('hidden')
       }
     });
   });
 
-  $('.card-body').on('click', '.far.fa-heart', function() {
-    let userId = $(this).data().userId;
-    let movieId = $(this).data().movieId;
+  $('.card').on('click', '.far.fa-heart', function() {
+    let userId = $(this).closest('.card').data().userId;
+    let movieId = $(this).closest('.card').data().movieId;
 
     $.ajax({
       method: "PUT",
@@ -65,7 +69,8 @@ $(document).ready(function() {
         },
       },
       success: function(data) {
-        $(`[data-movie-id='${movieId}'][data-favorite="true"]`)
+        $(`.card[data-movie-id='${movieId}']`)
+          .find('.fa-heart')
           .removeClass('far fa-heart fa-stack-1x fa-inverse')
           .addClass('fas fa-heart fa-stack-1x fa-inverse')
       }
@@ -73,8 +78,8 @@ $(document).ready(function() {
   });
 
   $('.card-body').on('click', '.fas.fa-heart', function() {
-    let userId = $(this).data().userId;
-    let movieId = $(this).data().movieId;
+    let userId = $(this).closest('.card').data().userId;
+    let movieId = $(this).closest('.card').data().movieId;
 
     $.ajax({
       method: "PUT",
@@ -90,7 +95,8 @@ $(document).ready(function() {
         },
       },
       success: function(data) {
-        $(`[data-movie-id='${movieId}'][data-favorite="true"]`)
+        $(`.card[data-movie-id='${movieId}']`)
+          .find('.fa-heart')
           .removeClass('fas fa-heart fa-stack-1x fa-inverse')
           .addClass('far fa-heart fa-stack-1x fa-inverse')
       }

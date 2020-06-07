@@ -1,21 +1,19 @@
- <div class="card">
+ <div class="card" data-movie-id=<%= m.id %> data-user-id=<%= current_user.id %>>
   <img src="https://image.tmdb.org/t/p/w500/<%= m.poster_path %>" class="card-img-top" alt="<%= m.title %>">
   <div class="card-body">
     <div class="text-container">
-        <h5 class="card-title"><%= m.title %></h5>
-        <p class="card-text"><%= m.overview %></p>
+      <h5 class="card-title"><%= m.title %></h5>
+      <p class="card-text"><%= m.overview %></p>
     </div>
     <% if icons %>
       <span class="fa-stack fa-2x">
         <i class="fas fa-circle fa-stack-2x"></i>
-        <i class="<%= watched_movie ? 'fas' : 'far' %> fa-bookmark fa-stack-1x fa-inverse" data-movie-id=<%= m.id %> data-user-id=<%= current_user.id %>></i>
+        <i class="<%= watched_movie ? 'fas' : 'far' %> fa-bookmark fa-stack-1x fa-inverse"></i>
       </span>
-      <% if watched_movie %>
-        <span class="fa-stack fa-2x">
-          <i class="fas fa-circle fa-stack-2x"></i>
-          <i class="<%= favorite ? 'fas' : 'far' %> fa-heart fa-stack-1x fa-inverse" data-movie-id=<%= m.id %> data-user-id=<%= current_user.id %> data-favorite="true"></i>
-        </span>      
-      <% end %>
+      <span class="fa-stack fa-2x favorite <%= watched_movie ? '' : 'hidden' %>">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="<%= favorite ? 'fas' : 'far' %> fa-heart fa-stack-1x fa-inverse" data-favorite="true"></i>
+      </span>   
     <% end %>
   </div>
 </div>
