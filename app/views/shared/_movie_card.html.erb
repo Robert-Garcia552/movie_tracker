@@ -6,9 +6,15 @@
         <p class="card-text"><%= m.overview %></p>
     </div>
     <% if icons %>
-      <i class="<%= watched_movie ? 'fas' : 'far' %> fa-sticky-note fa-3x" data-user-id="<%= current_user.id %>" data-movie-id="<%= m.id %>"></i> 
+      <span class="fa-stack fa-2x">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="<%= watched_movie ? 'fas' : 'far' %> fa-bookmark fa-stack-1x fa-inverse" data-movie-id=<%= m.id %> data-user-id=<%= current_user.id %>></i>
+      </span>
       <% if watched_movie %>
-        <i class="<%= favorite ? 'fas' : 'far' %> fa-thumbs-up fa-3x" data-user-id="<%= current_user.id %>" data-movie-id="<%= m.id %>" data-favorite="true"></i> 
+        <span class="fa-stack fa-2x">
+          <i class="fas fa-circle fa-stack-2x"></i>
+          <i class="<%= favorite ? 'fas' : 'far' %> fa-heart fa-stack-1x fa-inverse" data-movie-id=<%= m.id %> data-user-id=<%= current_user.id %> data-favorite="true"></i>
+        </span>      
       <% end %>
     <% end %>
   </div>

@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $('.card-body').on('click', '.far.fa-sticky-note', function() {
+  $('.card-body').on('click', '.far.fa-bookmark', function() {
     let userId = $(this).data().userId;
     let movieId = $(this).data().movieId;
 
@@ -16,12 +16,14 @@ $(document).ready(function() {
         }
       },
       success: function(data) {
-        $(`[data-movie-id='${movieId}']`).removeClass('far fa-sticky-note fa-3x').addClass('fas fa-sticky-note fa-3x')
+        $(`[data-movie-id='${movieId}']`)
+          .removeClass('far fa-bookmark fa-stack-1x fa-inverse')
+          .addClass('fas fa-bookmark fa-stack-1x fa-inverse')
       }
     });
   });
 
-  $('.card-body').on('click', '.fas.fa-sticky-note', function() {
+  $('.card-body').on('click', '.fas.fa-bookmark', function() {
     let userId = $(this).data().userId;
     let movieId = $(this).data().movieId;
 
@@ -38,12 +40,14 @@ $(document).ready(function() {
         }
       },
       success: function(data) {
-        $(`[data-movie-id='${movieId}']`).removeClass('fas fa-sticky-note fa-3x').addClass('far fa-sticky-note fa-3x')
+        $(`[data-movie-id='${movieId}']`)
+          .removeClass('fas fa-bookmark fa-stack-1x fa-inverse')
+          .addClass('far fa-bookmark fa-stack-1x fa-inverse')
       }
     });
   });
 
-  $('.card-body').on('click', '.far.fa-thumbs-up', function() {
+  $('.card-body').on('click', '.far.fa-heart', function() {
     let userId = $(this).data().userId;
     let movieId = $(this).data().movieId;
 
@@ -61,12 +65,14 @@ $(document).ready(function() {
         },
       },
       success: function(data) {
-        $(`[data-movie-id='${movieId}'][data-favorite="true"]`).removeClass('far fa-thumbs-up fa-3x').addClass('fas fa-thumbs-up fa-3x')
+        $(`[data-movie-id='${movieId}'][data-favorite="true"]`)
+          .removeClass('far fa-heart fa-stack-1x fa-inverse')
+          .addClass('fas fa-heart fa-stack-1x fa-inverse')
       }
     });
   });
 
-  $('.card-body').on('click', '.fas.fa-thumbs-up', function() {
+  $('.card-body').on('click', '.fas.fa-heart', function() {
     let userId = $(this).data().userId;
     let movieId = $(this).data().movieId;
 
@@ -84,7 +90,9 @@ $(document).ready(function() {
         },
       },
       success: function(data) {
-        $(`[data-movie-id='${movieId}'][data-favorite="true"]`).removeClass('fas fa-thumbs-up fa-3x').addClass('far fa-thumbs-up fa-3x')
+        $(`[data-movie-id='${movieId}'][data-favorite="true"]`)
+          .removeClass('fas fa-heart fa-stack-1x fa-inverse')
+          .addClass('far fa-heart fa-stack-1x fa-inverse')
       }
     });
   });
